@@ -61,7 +61,7 @@ var controller = {
 	}
 	,_case: function(eventType, matchObj, ui, page, evt) {
 		if(cache.details != matchObj[0]) {
-			$("#details [data-role=\"content\"]", page).empty();
+			$("[data-role=\"content\"]", page).empty();
 			setLoading(true);
 			phillyapi.getCase(matchObj[1], function(data) {
 				if(DEBUG) console.log(data);
