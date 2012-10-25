@@ -15,7 +15,7 @@ var controller = {
 					phillyapi.getSummary(addressKey, function(data) {
 						if(DEBUG) console.log(data);
 						if(_.isEmpty(data)) {
-							controller.error("No history found for this address");
+							controller.error("No history found for this address", page);
 						} else {
 							$("[data-role=\"content\"]", page).html(_.template($("#template-summary").html(), {address: address, data: data}));
 							$("[data-role=\"listview\"]", page).listview();
