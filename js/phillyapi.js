@@ -41,7 +41,8 @@ var phillyapi = {
 			,success: function(data) {
 				if("TopicID" in data) {
 					var addressKey = data.TopicID;
-					var address = data.AddressRef ? $.trim(data.AddressRef.replace(/ +(?= )/g,"")) : null;
+    				// Clean up the address. Default format is something like " 01234    MARKET ST" - needs to be "1234 MARKET ST" - Anyone have a better regex for it?
+					var address = data.AddressRef ? $.trim(data.AddressRef.replace(/ +(?= )/g,"")).replace(/^0+/, "") : null;
 					successCallback(addressKey, address);
 				}
 			}
