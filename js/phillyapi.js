@@ -16,12 +16,12 @@ var phillyapi = {
 			,lireviewboardappeal: "Service.svc/lireviewboardappeals?$filter=appeal_number%20eq%20'%id%'&$format=json"
 			,lirbhearingdecisions: "Service.svc/lirbhearingdecisions?$filter=appeal_id%20eq%20%id%&$format=json"
 			,lirbcourtdetails: "Service.svc/lirbcourtdetails?$filter=appeal_id%20eq%20%id%&$format=json"
-			,timeout: 10000
+			,timeout: 20000
 		}
 		,ulrs311: {
 			base: "http://services.phila.gov/ULRS311/Data/"
 			,addressKey: "LIAddressKey/"
-			,timeout: 10000
+			,timeout: 20000
 		}
 	}
 
