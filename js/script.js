@@ -103,6 +103,17 @@ new $.mobile.Router({
 	,"#details\\?entity=(.*)appeals&eid=(\\d*)": { handler: "appeal", events: "bs" }
 }, controller);
 
+$(document).ready(function() {
+    // Ensure user has input an address before pressing search
+	$("#search form").submit(function(e) {
+		var inputNode = $("input[name=\"address\"]", $(this));
+		if( ! $.trim(inputNode.val())) {
+			inputNode.focus();
+			return false;
+		}
+	});
+});
+
 // Necessary because v1.1.0 of jQuery Mobile doesn't seem to let you show the loading message during pagebeforeshow
 function setLoading(on) {
 	if(on) $("body").addClass("ui-loading");
