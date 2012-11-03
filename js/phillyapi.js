@@ -1,5 +1,5 @@
 var phillyapi = phillyapi || {};
-var phillyapi = {
+phillyapi = {
 	options: {
 		phillyapi: {
 			base: "http://services.phila.gov/PhillyApi/Data/"
